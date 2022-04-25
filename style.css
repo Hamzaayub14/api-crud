@@ -1,0 +1,8 @@
+.recipe{
+    border-bottom: 2px dashed black;
+    margin: 1rem;
+}
+.recipe button{
+    padding: 5px;
+    margin:4px;
+}

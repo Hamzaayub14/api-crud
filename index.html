@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+   
+ </head>
+<body class="container">
+    <h1>Recipies API client</h1>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+ Add recipe
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text"
+            class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="Title of recipe">
+          <small id="titlehelp" class="form-text text-muted">Help text</small>
+        </div>
+        <div class="form-group">
+          <label for="body">Body</label>
+          <input type="text"
+            class="form-control" name="body" id="body" aria-describedby="helpId" placeholder="Enter Body">
+          <small id="bodyhelp" class="form-text text-muted">Help text</small>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" id="addbtn" class="btn btn-primary" value="submit">Add Recipe</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- Modal -->
+  <div class="modal fade" id="updatemodal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Modal Update</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="id">Id</label>
+            <input type="text"
+              class="form-control" name="title" id="updateid" aria-describedby="helpId" placeholder="Title of recipe">
+            <small id="titlehelp" class="form-text text-muted">Help text</small>
+          </div>
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text"
+              class="form-control" name="title" id="updatetitle" aria-describedby="helpId" placeholder="Title of recipe">
+            <small id="titlehelp" class="form-text text-muted">Help text</small>
+          </div>
+          <div class="form-group">
+            <label for="body">Body</label>
+            <input type="text"
+              class="form-control" name="body" id="updatebody" aria-describedby="helpId" placeholder="Enter Body">
+            <small id="bodyhelp" class="form-text text-muted">Help text</small>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" id="btnsave" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="recipes">
+       Loading...
+    </div>
+    <!-- <div class="recipe"><h3 id="heading"></h3>
+        <p><button class="btn btn-danger btn-sm float-right">delete</button>${rec.body}</p>
+    </div> -->
+</body>
+</html>
