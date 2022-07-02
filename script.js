@@ -6,9 +6,9 @@ $(function(){
     $("#btnsave").click(function() {
         // var id = $("#updateid").val();
         var title = $("#updatetitle").val(response.name);
-        var body = $("#updatebody").val(response.description);
+        var body = $("#updatebody").val(response.price);
         $.ajax({
-            url:"https://usman-recipes.herokuapp.com/api/products/"+id,
+            url:"hhttps://api-prod-by-ha.herokuapp.com/api/products/"+id,
           
             method:"PUT",
             data : { title, body },
@@ -23,11 +23,11 @@ $(function(){
 })
 function addrecipe(){
     var name = $("#title").val();
-    var description = $("#body").val();
+    var price = $("#body").val();
     $.ajax({
-        url:"https://usman-recipes.herokuapp.com/api/products/",
+        url:"https://api-prod-by-ha.herokuapp.com/api/products",
         method:"POST",
-        data:{name,description},
+        data:{name,price},
         success:function(response){
             console.log(response);
             loadRecipies();
@@ -39,7 +39,7 @@ var btn = $(this);
 var parentDiv = btn.closest(".recipe")
 let id = parentDiv.attr("data-id");
 $.ajax({
-    url:"https://usman-recipes.herokuapp.com/api/products/"+id,
+    url:"https://api-prod-by-ha.herokuapp.com/api/products/"+id,
     method:"DELETE",
     success:function(){
         loadRecipies();
@@ -50,13 +50,13 @@ function handleUpdate(){
     var btn = $(this);
     var parentDiv = btn.closest(".recipe");
     let id = parentDiv.attr("data-id");
-    $.get("https://usman-recipes.herokuapp.com/api/products/"+id,function(response)
+    $.get("https://api-prod-by-ha.herokuapp.com/api/products/"+id,function(response)
 
 
     {
         $("#updateid").val(response._id);
         $("#updatetitle").val(response.name);
-        $("#updatebody").val(response.description);
+        $("#updatebody").val(response.price);
         $("#updatemodal").modal("show");
 
     });
@@ -64,7 +64,7 @@ function handleUpdate(){
 
 function loadRecipies(){
 $.ajax({
-    url:"https://usman-recipes.herokuapp.com/api/products/",
+    url:"https://api-prod-by-ha.herokuapp.com/api/products/",
     method:"GET",
     error:function(response){
         var recipes = $("#recipes");
@@ -79,7 +79,7 @@ $.ajax({
            
             // recipes.append(("#heading").${rec.title});
        
-        recipes.append(`<div class="recipe" data-id="${rec._id}"><h3>${rec.name}</h3><p><button class="btn btn-danger btn-sm float-right">delete</button><button class="btn btn-warning btn-sm float-right">edit</button>${rec.description}</p></div>`);
+        recipes.append(`<div class="recipe" data-id="${rec._id}"><h3>${rec.name}</h3><p><button class="btn btn-danger btn-sm float-right">delete</button><button class="btn btn-warning btn-sm float-right">edit</button>${rec.price}</p></div>`);
         // recipes.append("<div><h3>"+ rec.title +"</h3></div>");
     }
     }
